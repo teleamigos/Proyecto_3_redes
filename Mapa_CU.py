@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import Label
 
 #window init
 window=Tk()
@@ -8,8 +7,8 @@ window.title("CU waze")
 window.resizable(True,False)
 window.geometry("1020x1020")
 window.configure(background = 'black')
-#Getting image
+#Get the image
 mapa=PhotoImage(file="mapacu.gif")
-widget = Label(window, image=mapa).pack()
-#Closing
+widget = Label(window, image=mapa).place(x=150,y=50)
+#Close the window.
 window.mainloop()
