@@ -13,12 +13,11 @@ class CU_Mapp (tk.Tk):
         self.frames[StartPage]=frame
         frame.grid(row=0,column=0,sticky="nsew")
         self.show_frame(StartPage)
-        self.Show_TextField()
-        self.Show_SendButton()
+        self.create_widgets()
     def show_frame(self,cont):
         frame=self.frames[cont]
         frame.tkraise()
-    def Show_TextField(self):
+    def create_widgets(self):
         text_field=tk.Entry(self,width=10).pack()
-    def Show_SendButton(self):
-        send=tk.Button(self,text="Let's go!").pack(side="top")
+        send=tk.Button(self,text="Let's go!").pack()
+        
