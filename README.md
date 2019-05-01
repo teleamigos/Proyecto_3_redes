@@ -21,3 +21,10 @@ Version 2.1:
 
 -It was added a location text field.
 -Also a button to send your petition.
+
+####################################
+Version 3.0:
+
+- We deleted the text field.
+- We solved the problem that didn't show the image correctly
+- Now we can add locations points in the map. 
