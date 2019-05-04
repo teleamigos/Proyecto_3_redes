@@ -27,4 +27,8 @@ Version 3.0:
 
 - We deleted the text field.
 - We solved the problem that didn't show the image correctly
-- Now we can add locations points in the map. 
+- Now we can add locations points in the map.
+###############################################
+Version 3.1
+- Now It has many points in the map.
+ 
