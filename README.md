@@ -31,4 +31,6 @@ Version 3.0:
 ###############################################
 Version 3.1
 - Now It has many points in the map.
- 
+###############################################
+version 3.2
+- A button to find your location 

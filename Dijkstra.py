@@ -24,4 +24,4 @@ class Dijkstra:
             l.append(current.id)
             current=current.pi
         l.reverse()
-        print l
+        print (l)

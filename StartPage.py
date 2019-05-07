@@ -1,6 +1,6 @@
 import tkinter as tk
-
-
+from tkinter import ttk
+from Dijkstra import *
 LARGE_FONT=("Verdana",12)
 """ --------------------------------------------------------
 
@@ -15,13 +15,39 @@ class StartPage(tk.Frame):
         label=tk.Label(self,text="where are you going?",font=LARGE_FONT)#Show the Label.
         label.pack(side="top")
         self.mapa=tk.PhotoImage(file="CU.gif")# Load the image
-        send_button=tk.Button(self,text="Let's Go!")# Show a button to send info.
-        send_button.pack(side="top")
+
+        send_button=ttk.Button(self,text = "Find Location", command = self.clickButton)
+        send_button.pack()#)
+
         """ Create a canvas """
         self.canvas=tk.Canvas(width=790,height=580,bg="black")# Define the size shown of the image
         self.canvas.pack()
         self.canvas.create_image(0,0,image=self.mapa,anchor=tk.NW)#show the image
         self.Create_locations()#It's called  to set locations in the map.
+
+    def clickButton(self):
+        first_button=ttk.Button(self,text = "Your location",command = self.clickYourLocation)
+        first_button.pack(side = "left")
+
+        first_button=ttk.Button(self,text = "Dropped location",command = self.clickDroLocation)
+        first_button.pack(side = "left")
+
+        first_button=ttk.Button(self,text = "Start",command = self.clickStart)
+        first_button.pack(side = "left")
+
+    def clickYourLocation(self):
+        """
+        Instrucciones para boton que selecciona ubicacion actual
+        """
+    def clickDroLocation(self):
+        """
+        Instrucciones para boton que selecciona destino
+        """
+
+    def clickStart(self):
+        """
+        Instrucciones para boton que inicia proceso de ruta
+        """
 
     def Create_locations(self):
         """this method  put points of location in the map """
