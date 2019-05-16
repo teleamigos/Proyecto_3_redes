@@ -1,6 +1,7 @@
 import tkinter as tk
+#from ttk import *
 from tkinter import ttk
-from Dijkstra import *
+#from Dijkstra import *
 LARGE_FONT=("Verdana",12)
 """ --------------------------------------------------------
 
@@ -16,7 +17,7 @@ class StartPage(tk.Frame):
         label.pack(side="top")
         self.mapa=tk.PhotoImage(file="CU.gif")# Load the image
 
-        send_button=ttk.Button(self,text = "Find Location", command = self.clickButton)
+        send_button=tk.Button(self,text = "Find Location", command = self.clickButton)
         send_button.pack()#)
 
         """ Create a canvas """
@@ -25,14 +26,17 @@ class StartPage(tk.Frame):
         self.canvas.create_image(0,0,image=self.mapa,anchor=tk.NW)#show the image
         self.Create_locations()#It's called  to set locations in the map.
 
+        #""" Graph initialize  """
+        #self.gra=Graph()
+
     def clickButton(self):
-        first_button=ttk.Button(self,text = "Your location",command = self.clickYourLocation)
+        first_button=tk.Button(self,text = "Your location",command = self.clickYourLocation)
         first_button.pack(side = "left")
 
-        first_button=ttk.Button(self,text = "Dropped location",command = self.clickDroLocation)
+        first_button=tk.Button(self,text = "Dropped location",command = self.clickDroLocation)
         first_button.pack(side = "left")
 
-        first_button=ttk.Button(self,text = "Start",command = self.clickStart)
+        first_button=tk.Button(self,text = "Start",command = self.clickStart)
         first_button.pack(side = "left")
 
     def clickYourLocation(self):
@@ -51,41 +55,41 @@ class StartPage(tk.Frame):
 
     def Create_locations(self):
         """this method  put points of location in the map """
-        pumitas=self.canvas.create_oval(120,410,130,420,fill='blue')
-        anexo_ingenieria=self.canvas.create_oval(480,346,490,356,fill='blue')
-        F_economia=self.canvas.create_oval(446,26,456,36,fill='blue')
-        D_general_deporte=self.canvas.create_oval(55,84,65,94,fill='blue')
-        E_universitario=self.canvas.create_oval(167,131,177,141,fill='blue')
+        pumitas=self.canvas.create_oval(120,410,135,425,fill='red')
+        anexo_ingenieria=self.canvas.create_oval(480,346,495,361,fill='red')
+        F_economia=self.canvas.create_oval(446,26,461,41,fill='red')
+        D_general_deporte=self.canvas.create_oval(55,84,70,99,fill='red')
+        E_universitario=self.canvas.create_oval(167,131,182,146,fill='red')
 
-        rectoria=self.canvas.create_oval(292,119,302,129,fill='blue')
-        FyLetras=self.canvas.create_oval(335,50,345,60,fill='blue')
-        Islas=self.canvas.create_oval(385,86,395,96,fill='blue')
-        F_medicina=self.canvas.create_oval(547,83,557,93,fill='blue')
-        F_odontologia=self.canvas.create_oval(508,36,518,46,fill='blue')
+        rectoria=self.canvas.create_oval(292,119,307,134,fill='red')
+        FyLetras=self.canvas.create_oval(335,50,350,65,fill='red')
+        Islas=self.canvas.create_oval(385,86,400,101,fill='red')
+        F_medicina=self.canvas.create_oval(547,83,562,98,fill='red')
+        F_odontologia=self.canvas.create_oval(508,36,523,51,fill='red')
 
-        F_ingenieria=self.canvas.create_oval(405,136,415,146,fill='blue')
-        F_derecho=self.canvas.create_oval(446,48,456,58,fill='blue')
-        muca=self.canvas.create_oval(310,152,320,162,fill='blue')
-        F_arquitectura=self.canvas.create_oval(346,154,356,164,fill='blue')
-        A_olimpica=self.canvas.create_oval(393,188,403,198,fill='blue')
+        F_ingenieria=self.canvas.create_oval(405,136,420,151,fill='red')
+        F_derecho=self.canvas.create_oval(446,48,461,63,fill='red')
+        muca=self.canvas.create_oval(310,152,325,167,fill='red')
+        F_arquitectura=self.canvas.create_oval(346,154,361,169,fill='red')
+        A_olimpica=self.canvas.create_oval(393,188,408,203,fill='red')
 
-        Direccion_cch=self.canvas.create_oval(283,210,293,220,fill='blue')
-        Escultura_flama=self.canvas.create_oval(293,241,303,251,fill='blue')
-        Museo_anatomia=self.canvas.create_oval(625,162,635,172,fill='blue')
-        F_MedicinaVyZ=self.canvas.create_oval(641,604,651,614,fill='blue')
-        Cafe76=self.canvas.create_oval(665,155,675,165,fill='blue')
+        Direccion_cch=self.canvas.create_oval(283,210,298,225,fill='red')
+        Escultura_flama=self.canvas.create_oval(293,241,308,256,fill='red')
+        Museo_anatomia=self.canvas.create_oval(625,162,640,177,fill='red')
+        F_MedicinaVyZ=self.canvas.create_oval(641,604,656,619,fill='red')
+        Cafe76=self.canvas.create_oval(665,155,680,170,fill='red')
 
-        Museo_morfologia=self.canvas.create_oval(635,235,645,245,fill='blue')
-        Posgrado_ingenieria=self.canvas.create_oval(503,275,513,285,fill='blue')
-        Instituto_quimica=self.canvas.create_oval(588,288,598,298,fill='blue')
-        Instituto_geofisica=self.canvas.create_oval(679,295,689,305,fill='blue')
-        Instituto_fisica=self.canvas.create_oval(641,370,651,380,fill='blue')
+        Museo_morfologia=self.canvas.create_oval(635,235,650,250,fill='red')
+        Posgrado_ingenieria=self.canvas.create_oval(503,275,518,290,fill='red')
+        Instituto_quimica=self.canvas.create_oval(588,288,603,303,fill='red')
+        Instituto_geofisica=self.canvas.create_oval(679,295,694,310,fill='red')
+        Instituto_fisica=self.canvas.create_oval(641,370,656,385,fill='red')
 
-        F_ciencias=self.canvas.create_oval(551,385,561,395,fill='blue')
-        Trabajo_social=self.canvas.create_oval(335,404,345,414,fill='blue')
-        M_universidad=self.canvas.create_oval(747,384,757,394,fill='blue')
-        MB_universidad=self.canvas.create_oval(287,406,297,416,fill='blue')
-        Instituto_ecologia=self.canvas.create_oval(154,474,164,484,fill='blue')
+        F_ciencias=self.canvas.create_oval(551,385,566,400,fill='red')
+        Trabajo_social=self.canvas.create_oval(335,404,350,419,fill='red')
+        M_universidad=self.canvas.create_oval(747,384,762,399,fill='red')
+        MB_universidad=self.canvas.create_oval(287,406,302,421,fill='red')
+        Instituto_ecologia=self.canvas.create_oval(154,474,169,489,fill='red')
 
 
 
